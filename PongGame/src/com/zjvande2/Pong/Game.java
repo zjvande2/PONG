@@ -20,7 +20,7 @@ public class Game {
 	private int ySize = xSize;
 	private int xPos = Pong.WIDTH  / 2;
 	private int yPos = Pong.HEIGHT / 2;
-	private int ballSpeed = 20;
+	private int ballSpeed = 1;
 	
 	
 	public Game() {

@@ -20,8 +20,8 @@ public class Pong extends Canvas implements Runnable {
 
 	private boolean running = false;
 	
-	public static final int WIDTH = 1280;
-	public static final int HEIGHT = 720;
+	public static final int WIDTH = 800;
+	public static final int HEIGHT = 600;
 	public static String TITLE = "PONG";
 	
 	public Game game;

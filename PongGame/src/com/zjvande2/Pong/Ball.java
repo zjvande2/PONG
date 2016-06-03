@@ -11,7 +11,7 @@ public class Ball {
 	private int ballSpeed;
 
 	private boolean wasInit = false;
-	
+
 	public Ball(int x, int y, int xs, int ys, int bs) {
 		this.xPos = x;
 		this.yPos = y;
@@ -55,23 +55,20 @@ public class Ball {
 	}
 
 	public void drawBall(Graphics g) {
-		g.fillArc(getXPos(), getYPos(), getXSize(), getYSize(), 0, 360);
+		moveBall(g);
 		drawCollider(true, g);
-
-		if (!wasInit) {
-			initMoving(g);
-			wasInit = true;
-		} else {
-			moveBall(g);
-		}
-	}
-
-	public void initMoving(Graphics g) {
-		g.fillArc(this.getXPos() + this.getMoveSpeed(), this.getYPos() + this.getMoveSpeed(), this.getXSize(), this.getYSize(), 0, 360);
+		clearBall();
 	}
 
 	public void moveBall(Graphics g) {
-		g.fillArc(getXPos() + getMoveSpeed(), getYPos() + getMoveSpeed(), getXSize(), getYSize(), 0, 360);
+		setXPos(getMoveSpeed());
+		setYPos(getMoveSpeed());
+
+		g.fillArc(this.getXPos(), this.getYPos(), this.getXSize(), this.getYSize(), 0, 360);
+	}
+
+	public void clearBall() {
+
 	}
 
 	public void drawCollider(boolean draw, Graphics g) {
